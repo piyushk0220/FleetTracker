@@ -1,0 +1,343 @@
+<!-- Bootstrap and Boxicon imports-->
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<body class="home">
+
+  <!-- Navigation bar -->
+
+<div id="navigation">
+    <div class="logo-details">
+      <img src="./assets/undp2.jpg">
+      <span class="logo_name">Fleet Tracker</span>
+    </div>
+    <br><br>
+
+    <div class="select-list">
+
+      <select name="locs" id="locs">
+        <option value="volvo">Georgia</option>
+        <option value="volvo">Florida</option>
+        <option value="saab">Austria</option>
+        
+
+      </select>
+    </div>
+
+
+    <ul class="sidenav-nav">
+      <li class="active"> <a><i class="fa fa-home" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Dashboard</span></a></li>
+      <li class="active"><a><i class="fa fa-calendar" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Bookings</span></a></li>
+      <li class="active"><a><i class="fa fa-cog" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Configurations</span></a></li>
+      <li class="active"><a><i class="fa fa-file-text" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Reports</span></a></li>
+      <li class="active"><a><i class="fa fa-line-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">BI
+            Reports</span></a></li>
+
+
+
+    </ul>
+    <br><br>
+    <!-- Admin details-->
+    <div id="admin">
+      <div class="imgg">
+        <img src='../../assets/admin.jpg'>
+      </div>
+      <br><br>
+      <b >Michel M</b>
+      <p>Super Admin</p>
+    </div>
+    <img id="logimg" src='../../assets/logout.png'>
+    <p class="logout">Logout</p>
+  </div>
+
+  <section class="home-section">
+
+  <!-- Upper boxes-->
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <img src="./assets/tenants.jpg">
+          <div class="right-side">
+            <div class="box-topic">Tenants</div>
+            <div class="number">
+              <ul *ngFor="let post of data">{{ post.tenants}}
+              </ul>
+            </div>
+            <div class="indicator">
+
+            </div>
+          </div>
+
+        </div>
+        <div class="box">
+          <img src="./assets/fleets.jpg">
+          <div class="right-side">
+            <div class="box-topic">Fleets</div>
+            <div class="number">
+              <ul *ngFor="let post of data">{{ post.fleets}}
+              </ul>
+            </div>
+            <div class="indicator">
+
+
+            </div>
+          </div>
+
+        </div>
+        <div class="box">
+          <img src="./assets/vehicles.jpg">
+          <div class="right-side">
+            <div class="box-topic">Vehicles</div>
+            <div class="number">
+              <ul *ngFor="let post of data">{{ post.vehicles}}
+              </ul>
+            </div>
+            <div class="indicator">
+
+
+            </div>
+          </div>
+
+        </div>
+        <div class="box">
+          <img src="./assets/devices.jpg">
+          <div class="right-side">
+            <div class="box-topic">Devices</div>
+            <div class="number">
+              <ul *ngFor="let post of data">{{ post.devices}}
+              </ul>
+            </div>
+            <div class="indicator">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Google Map-->
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div style="height:400px " id="map"></div>
+
+    
+
+          <div class="sales-details">
+            <div class="gf">
+              &nbsp;&nbsp;Georgia Fleet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+            <div id="sb">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              Search box
+              <h4>Online:<b id="gg">06&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>Faulty:<b id="rrr">00</b></h4>
+
+
+            </div>
+          </div>
+
+          <!-- Vehicle List-->
+          <div id="pp">
+
+            <table>
+              <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Last Seen</th>
+                <th>Distance Travel</th>
+                <th>IMEI Number</th>
+              </tr>
+
+              <tr class="hoverrr" *ngFor="let post of vehicle">
+                <td>{{post.id}} </td>
+                <td> {{ post.name }}</td>
+                <td>{{post.lastSeen}}</td>
+                <td>{{post.distance}} kms</td>
+                <td><span class="dot"></span> {{post.imei}}</td>
+              </tr>
+
+
+
+            </table>
+            <br>
+            <tr>
+              <span class="dot"></span> Danlaw <span class="dot3"></span> CalAmp<span class="dot3"></span>
+              Teltonika<span class="dot2"></span> Go Fleet
+            </tr>
+
+          </div>
+
+          <div class="center">
+            <div class="pagination">
+              <a href="#">Previous</a>
+              <a href="#">1</a>
+              <a href="#" class="active">2</a>
+              <a href="#">3</a>
+              <a href="#">Next</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-sales box">
+          <a routerLink="/fullview">
+            <h5 id="fullview"> Full View</h5>
+          </a>
+          <div class="title">
+            <img src="./assets/driver.jpg">
+          </div>
+
+          <h3 id="arturo">Arturo William</h3>
+          <p style="text-align:center">20/01/2022</p>
+          <ul class="top-sales-details">
+            <div class="grid-container">
+              <div class="grid-item">
+                <img src="./assets/Subtraction.jpg">
+
+                <b>Good</b><br>
+                <p> Vehicle Condition</p>
+                <hr>
+                <br><br>
+              </div>
+              <div class="grid-item">
+                <img src="./assets/scar.jpg">
+                <b>6.04</b><br>
+                <p>Runtime</p>
+                <hr>
+              </div>
+
+              <div class="grid-item">
+                <img src="./assets/travel.jpg">
+                <b>29 kms</b>
+                <p>Distance travelled</p>
+              </div>
+              <div class="grid-item">
+                <img src="./assets/time.jpg">
+                <b>06:23</b>
+                <p>12/01/22<br>
+                  Last seen</p>
+              </div>
+
+
+
+
+              <div class="vehicle">
+
+              </div>
+              <div class="vehicle">
+
+
+              </div>
+
+
+            </div>
+
+
+          </ul>
+
+          <div class="info">
+            2:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            3:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            12:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            13:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            22:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            23:00
+            <hr>
+
+            <span class="dot5"></span><span class="dot6"></span><span class="dot7"></span>
+            <span class="dot8"></span>&nbsp;&nbsp;&nbsp;<span class="dot10"></span><span class="dot9"></span>
+            <hr id="line">
+            <hr>
+            <div class="inside">
+              <p>Name:<b>
+                  <div class="loop" *ngFor="let province of vehicle;let i=index">
+                    <div *ngIf="i<1">
+                      {{province.name}}
+                    </div>
+                  </div>
+                </b></p>
+              <p>Device Type:<b> Danlaw</b></p>
+              <p>Vin: <b>KMHJN81B9U957146</b></p>
+            </div>
+            <div class="inside2">
+              <img src="./assets/car.jpg">
+            </div>
+
+          </div>
+
+          <br>
+           <!-- Trip details-->
+           
+          <p><b>Trips</b></p>
+          <div class="trips">
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+            <div class="content">
+              <br>
+              <b>10.9 kms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1l</b>
+              <br>
+              &nbsp;&nbsp;Distance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fuel%
+            </div>
+          </div>
+          <br>
+          <div class="trips2">
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+            <div class="content">
+              <br>
+              <b>10.9 kms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1l</b>
+              <br>
+              &nbsp;&nbsp;Distance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fuel%
+            </div>
+          </div>
+          <br>
+          <div class="trips3">
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+            <div class="content">
+              <br>
+              <b>10.9 kms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.1l</b>
+              <br>
+              &nbsp;&nbsp;Distance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fuel%
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  

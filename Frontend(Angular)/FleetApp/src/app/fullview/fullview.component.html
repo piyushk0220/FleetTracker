@@ -1,0 +1,377 @@
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+  integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+<body class="home">
+
+  <!-- Logo & Title-->
+  <div id="navigation">
+    <div class="logo-details">
+      <img src="./assets/undp2.jpg">
+      <span class="logo_name">Fleet Tracker</span>
+    </div>
+    <br><br>
+     <!-- Dropdown Fleet list-->
+    <div class="select-list">
+
+      <select name="locs" id="locs" style="background-color: rgba(11, 11, 95, 0.11);color: aliceblue;">
+        <option value="volvo">Georgia</option>
+        <option value="volvo">Florida</option>
+        <option value="saab">Austria</option>
+
+      </select>
+    </div>
+      
+     <!-- Navigation Bar-->
+    <ul class="sidenav-nav">
+      <li class="active"> <a><i class="fa fa-home" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Dashboard</span></a></li>
+      <li class="active"><a><i class="fa fa-calendar" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Bookings</span></a></li>
+      <li class="active"><a><i class="fa fa-cog" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Configurations</span></a></li>
+      <li class="active"><a><i class="fa fa-file-text" aria-hidden="true"></i><span
+            class="hidden-xs hidden-sm">Reports</span></a></li>
+      <li class="active"><a><i class="fa fa-line-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">BI
+            Reports</span></a></li>
+ </ul>
+    <br><br>
+
+    <!-- Driver Details-->
+
+    <div id="admin">
+      <div class="imgg">
+        <img src='../../assets/admin.jpg'>
+      </div>
+      <br><br>
+      <b>Michel M</b>
+      <p>Super Admin</p>
+    </div>
+    <img class="lgimg"src='../../assets/logout.png'>
+    <p class="lg">Logout</p>
+  </div>
+
+  <section class="home-section">
+    <img id="arrow" src='../../assets/arl.png'>
+    <h3 id="currentFleet">UNDP 101</h3>
+
+
+    <div class="home-content">
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <!--Google Map-->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4195352.05145249!2d78.09602488927679!3d23.38007298516208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1652354321353!5m2!1sen!2sin"
+            style="width:100%;height:400px"></iframe>
+
+          <div class="sales-details">
+         </div>
+       </div>
+
+        <div class="top-sales box">
+          <div class="title">
+            <img src="./assets/driver.jpg">
+          </div>
+
+          <h3 id="arturo"><ul *ngFor="let driver of drivers">
+            <li>{{driver.name}}</li></ul></h3>
+          <p style="text-align:center">20/01/2022</p>
+          <ul class="top-sales-details">
+            <div class="grid-container">
+              <div class="grid-item">
+                <img src="./assets/Subtraction.jpg">
+
+                <b *ngFor="let driver of drivers">{{driver.condition}}</b><br>
+                <p> Vehicle Condition</p>
+                <hr>
+                <br><br>
+              </div>
+              <div class="grid-item">
+                <img src="./assets/scar.jpg">
+                <b *ngFor="let driver of drivers">{{driver.runtime}}</b><br>
+                <p>Runtime</p>
+                <hr>
+              </div>
+
+              <div class="grid-item">
+                <img src="./assets/travel.jpg">
+                <b >29 kms</b>
+                <p>Distance travelled</p>
+              </div>
+              <div class="grid-item">
+                <img src="./assets/time.jpg">
+                <b>06:23</b>
+                <p *ngFor="let driver of drivers">{{driver.doj}}<br>
+                  Last seen</p>
+              </div>
+
+
+
+
+              <div class="vehicle">
+
+              </div>
+              <div class="vehicle">
+
+
+              </div>
+
+
+            </div>
+
+
+          </ul>
+
+          <div class="info">
+            2:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            3:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            12:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            13:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            22:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            23:00
+            <hr>
+
+            <span class="dot5"></span><span class="dot6"></span><span class="dot7"></span>
+            <span class="dot8"></span>&nbsp;&nbsp;&nbsp;<span class="dot10"></span><span class="dot9"></span>
+            <hr id="line">
+            <hr>
+          </div>
+         </div>
+      </div>
+      <div class="out">
+
+        <h3 id="vih"><u id="vi">Vehicle Info</u>&nbsp;&nbsp;
+          Alerts</h3><br>
+
+        <img id="car2x" src="./assets/car2x.png">
+
+        <div class="details">
+          <h3><b>UNDP 102</b></h3>
+          <p>&nbsp;Vin: <b>KMHJN81B9U957146</b></p>
+          <p>&nbsp;IMEI No.: <b>783454621234</b></p>
+          <p>&nbsp;Device Type:<b> Teltonica</b></p>
+        </div>
+        <br><br><br>
+        <hr>
+        <!--Trip safety analysis graph-->
+        <p>&nbsp;&nbsp;<b> Trip Safety Analysis</b></p>
+
+
+        <div id="safety">
+          <span class="dot2"></span>Speed&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="dot"></span>Speed Limit
+        </div>
+        <br>
+        <img id="graph" src="./assets/graph.png">
+      </div>
+      <!-- Trip details-->
+      <div class="trip">
+        <h3 id="trp"><u id="trt"style="">Trips</u>&nbsp;&nbsp; Booking
+        </h3>
+        <div class="icn">
+          <img src="./assets/refresh.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="./assets/file.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <img src="./assets/dropleft.png">
+          <img id="drop" src="./assets/dropright.png">
+        </div>
+        <div class="calendar">
+          20 Jan<h3>2022</h3>
+        </div>
+
+         <!-- Trip Boxes-->
+        <div class="flexy">
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+
+        </div>
+        <br><br>
+        
+        <div class="fulltrip">
+          <div style="margin-top:5px" class="time">
+            <img src="./assets/green.jpg">
+            <b> 10.49</b><br>
+            <img src="./assets/line.jpg">
+            <br>
+            <img src="./assets/red.jpg">
+            <b> 11.11</b>
+
+          </div>
+        </div>
+
+        <div class="flexy" >
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="flexy">
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+ 
+            </div>
+          </div>
+
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="flexy">
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+          <div class="tr">
+            &nbsp;
+            <div class="time">
+              <img src="./assets/green.jpg">
+              <b> 10.49</b><br>
+              <img src="./assets/line.jpg">
+              <br>
+              <img src="./assets/red.jpg">
+              <b> 11.11</b>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
